@@ -1,20 +1,16 @@
 import { FunctionComponent } from "react"
+import "./button.css"
 
 export interface ButtonProps {
-    onClick(): void,
-    width?:number,
-    heigth?:number,
-    cursor?:string,
-    backgroundColor?:string,
-    colorText?:string,
+    onClick(e:any): void,
     src?:string,
 }
 
 
-const Button: FunctionComponent<ButtonProps> = ({onClick,width,heigth,cursor,backgroundColor,colorText,src}) => {
+const Button: FunctionComponent<ButtonProps> = ({onClick,src}) => {
     return (
         <button onClick={onClick} >
-            <img className="addButton" src={src} alt="" style={{width: `${width}px`, height: `${heigth}px`, cursor: `${cursor}`,backgroundColor: `${backgroundColor}`,color:`${colorText}`}} />
+            <img className="addButton" src={src} alt=""  />
         </button>
     )
 }

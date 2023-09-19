@@ -1,20 +1,16 @@
 import { FunctionComponent } from "react"
+import "./input.css"
 
 
 export interface InputProps {
-    title?:string,
+    onChange?(event:any):void
     type:string,
-    state?:boolean
-    colorText?:string,
-    backgroundColor?:string,
-    width?: number,
-    heigth?: number,
-    cursor?:string,
+    checked?:boolean,
 }
 
-const Input: FunctionComponent<InputProps> = ({title,type,state,colorText,width,heigth,cursor, backgroundColor}) => {
+const Input: FunctionComponent<InputProps> = ({onChange,type,checked}) => {
     return(
-        <input title={title} type={type} style={{ width: `${width}px`, height: `${heigth}px`, cursor: `${cursor}`, backgroundColor: `${backgroundColor}`,color:`${colorText}`, }} />
+        <input className="input" onChange={onChange} type={type} checked={checked} />
     )
 }
 
