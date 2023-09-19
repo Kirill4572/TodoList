@@ -35,16 +35,13 @@ const App = () => {
     return setChange(event.target.value);
   };
   const renderTasks = () => {
-    return tasks.map((task,i) => (
+    return tasks.map((task, i) => (
       <div>
         {task.id}
         <Input
           type="checkbox"
           onChange={() => {
-          task.id += 1;
-          const newTasks = [...tasks]
-          newTasks[i] = {id:newTasks[i].id + 1, ...newTasks[i]};
-          setTasks(newTasks);
+            task.id = (+task.id + 1).toString();
             setChecked((state) => !state);
           }}
         />
